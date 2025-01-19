@@ -1,0 +1,119 @@
+{
+  "jobs": [
+    {
+      "position": "Frontend Developer",
+      "company": "Microsoft",
+      "location": "Redmond",
+      "status": "Reddedildi",
+      "type": "Uzaktan",
+      "id": "d87a9143-58b7-4c65-b0ae-fa18add8c921",
+      "date": 1712307002424,
+      "rejection_date": 1712307002424
+    },
+    {
+      "position": "Data Analyst",
+      "company": "Coca Cola",
+      "location": "Menlo Park",
+      "status": "Devam Ediyor",
+      "type": "Uzaktan",
+      "id": "c1c7f9d1-dcf4-4b51-994f-499f8710f072",
+      "date": 1714602002418
+    },
+    {
+      "position": "Product Manager",
+      "company": "Udemig",
+      "location": "Redmond",
+      "status": "Reddedildi",
+      "type": "Yarı Zamanlı",
+      "id": "6b94a2d3-0571-412b-81e0-910d99a2f057",
+      "date": 1712607002328,
+      "rejection_date": 1712607002328
+    },
+    {
+      "position": "Product Manager",
+      "company": "IBM",
+      "location": "Redmond",
+      "status": "Devam Ediyor",
+      "type": "Yarı Zamanlı",
+      "id": "5fb295d4-ffe7-48a0-bf1b-a6e4e95020d3",
+      "date": 1716607002428
+    },
+    {
+      "position": "Marketing Manager",
+      "company": "Microsoft",
+      "location": "Seattle",
+      "status": "Reddedildi",
+      "type": "Yarı Zamanlı",
+      "id": "d7c4d757-4957-488d-a7f2-f8db05aa2c46",
+      "date": 1318607013502,
+      "rejection_date": 1318607013502
+    },
+    {
+      "position": "Data Scientist",
+      "company": "Microsoft",
+      "location": "Menlo Park",
+      "status": "Devam Ediyor",
+      "type": "Yarı Zamanlı",
+      "id": "ec72d702-ff65-46e4-bc4c-0ee6d3660913",
+      "date": 1715607078538
+    },
+    {
+      "position": "Data Scientist",
+      "company": "Microsoft",
+      "location": "Menlo Park",
+      "status": "Mülakat",
+      "type": "Tam Zamanlı",
+      "id": "7fb211e4-a53e-4804-b949-9a3d25b8e67c",
+      "date": 1712608152577,
+      "interview_date": 1712608152577
+    },
+    {
+      "id": "9ee5155f-0984-4c16-9f6a-90712facfb78",
+      "position": "Marketing Manager",
+      "company": "Udemig",
+      "location": "İstanbul",
+      "status": "Mülakat",
+      "type": "Tam Zamanlı",
+      "date": 1720550896851,
+      "interview_date": 1720550896851
+    },
+    {
+      "id": "3a48eef4-2850-4b8d-83a2-aed6b10b37f8",
+      "position": "Data Analyst",
+      "company": "Mimcode",
+      "location": "İstanbul",
+      "status": "Reddedildi",
+      "type": "Yarı Zamanlı",
+      "date": 1720552344626,
+      "rejection_date": 1720552344626
+    },
+    {
+      "position": "Marketing Manager",
+      "company": "Udemig",
+      "location": "İstanbul",
+      "status": "Mülakat",
+      "type": "Tam Zamanlı",
+      "id": "336e87e4-e8b0-4e29-87a5-2962f6249b32",
+      "date": 1720632154668,
+      "interview_date": 1720632154668
+    },
+    {
+      "position": "Softwatre Tester",
+      "company": "Amazon",
+      "location": "İstanbul, Türkiye",
+      "status": "Devam Ediyor",
+      "type": "Tam Zamanlı",
+      "date": "2024-12-06",
+      "id": "cQjjOZG"
+    },
+    {
+      "position": "Fullstack Developer",
+      "company": "Udemig",
+      "location": "İstanbul, Türkiye",
+      "status": "Mülakat",
+      "type": "Uzaktan",
+      "interview_date": "2025-01-26T04:04",
+      "id": "v-bKA_8"
+    }
+  ]
+}

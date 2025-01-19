@@ -1,0 +1,93 @@
+.card {
+  background-color: #242424;
+  padding: 15px 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 3px rgba(245, 245, 245, 0.3);
+  font-size: 16px;
+
+  .head {
+    display: flex;
+    justify-content: space-between;
+
+    & > div {
+      display: flex;
+      gap: 15px;
+    }
+
+    .letter {
+      background: #2e8bca;
+      display: grid;
+      place-items: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 6px;
+    }
+  }
+
+  .line {
+    height: 1px;
+    background: #171717;
+    width: 90%;
+    margin: 15px auto;
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+
+    .comp {
+      margin-top: 10px;
+    }
+
+    .icon {
+      color: rgba(255, 255, 255, 0.536);
+    }
+
+    .loc {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .date {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.838);
+        white-space: nowrap;
+      }
+
+      .type {
+        background: rgb(77, 76, 76);
+        padding: 5px 10px;
+        border-radius: 6px;
+        font-size: 15px;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    align-items: center;
+
+    .delete,
+    .edit {
+      color: #797777;
+      transition: color 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
