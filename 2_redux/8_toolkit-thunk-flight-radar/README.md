@@ -4,8 +4,9 @@
 - @reduxjs/toolkit
 - react-redux
 - react-router-dom
-- react-leaflet
 - leaflet
+- react-leaflet
+- leaflet-rotatedmarker
 - react-paginate
 - bootstrap
 - axios

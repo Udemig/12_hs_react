@@ -27,4 +27,15 @@ export const getFlights = createAsyncThunk("flight/getFlights", async () => {
   return formatted;
 });
 
-// TODO SLICE'I GÜNCELLE
+export const getDetails = createAsyncThunk("detail/getDetails", async (id) => {
+  // parametreleri belirle
+  const params = {
+    flight: id,
+  };
+
+  // api'dan detaları al
+  const res = await api.get("/flights/detail", { params });
+
+  // aksiyonun payload'ını belirle
+  return res.data;
+});

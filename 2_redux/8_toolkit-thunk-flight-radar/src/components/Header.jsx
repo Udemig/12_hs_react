@@ -1,6 +1,9 @@
+import { useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
+  const { isLoading, error, flights } = useSelector((store) => store.flight);
+
   return (
     <header>
       <Link to="/" className="logo">
@@ -17,7 +20,13 @@ const Header = () => {
         </NavLink>
       </div>
 
-      <h3>357 Uçuş Bulundu</h3>
+      <h3>
+        {isLoading
+          ? "Uçuşlar Aranıyor..."
+          : error
+          ? error
+          : `${flights.length} Uçuş Bulundu`}
+      </h3>
     </header>
   );
 };
