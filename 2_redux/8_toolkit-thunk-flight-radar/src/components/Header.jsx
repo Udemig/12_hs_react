@@ -21,11 +21,13 @@ const Header = () => {
       </div>
 
       <h3>
-        {isLoading
-          ? "Uçuşlar Aranıyor..."
-          : error
-          ? error
-          : `${flights.length} Uçuş Bulundu`}
+        {isLoading ? (
+          "Uçuşlar Aranıyor..."
+        ) : error ? (
+          <p className="error">{error}</p>
+        ) : (
+          `${flights.length} Uçuş Bulundu`
+        )}
       </h3>
     </header>
   );

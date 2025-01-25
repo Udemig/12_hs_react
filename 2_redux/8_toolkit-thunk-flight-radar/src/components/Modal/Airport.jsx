@@ -8,7 +8,8 @@ const Airport = ({ data }) => {
         <h2>{c(data.origin?.code?.iata)}</h2>
         <h3>{c(data.origin?.position?.region?.city)}</h3>
         <span>
-          ({c(data.origin?.timezone?.abbr)}) ({c(data.origin?.timezone?.name)})
+          ({c(data.origin?.timezone?.abbr)}) <br /> (
+          {c(data.origin?.timezone?.name)})
         </span>
       </div>
 
@@ -20,7 +21,7 @@ const Airport = ({ data }) => {
         <h2>{c(data.destination?.code?.iata)}</h2>
         <h3>{c(data.destination?.position?.region?.city)}</h3>
         <span>
-          ({c(data.destination?.timezone?.abbr)}) (
+          ({c(data.destination?.timezone?.abbr)}) <br />(
           {c(data.destination?.timezone?.name)})
         </span>
       </div>
