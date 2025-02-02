@@ -1,14 +1,36 @@
 import EmojiPicker from "emoji-picker-react";
 import { useState } from "react";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { db, auth } from "../firebase";
 
-const Form = () => {
+const Form = ({ room }) => {
   const [text, setText] = useState();
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(text);
+    // mesaj içerği boşsa iptal et
+    if (text.trim() === "") return;
+
+    // verinin kaydedileceği kolleksiyonun referansını al
+    const collectionRef = collection(db, "messages");
+
+    // ilgili kolleksiyonu veriyi ekle
+    await addDoc(collectionRef, {
+      text,
+      room,
+      author: {
+        id: auth.currentUser.uid,
+        name: auth.currentUser.displayName,
+        photo: auth.currentUser.photoURL,
+      },
+      createdAt: serverTimestamp(),
+    });
+
+    // formu temizle
+    setText("");
+    setIsOpen(false);
   };
 
   return (
@@ -32,7 +54,11 @@ const Form = () => {
           />
         </div>
 
-        <button onClick={() => setIsOpen(!isOpen)} className="btn text-base">
+        <button
+          type="button"
+          onClick={() => setIsOpen(!isOpen)}
+          className="btn text-base"
+        >
           😀
         </button>
       </div>
