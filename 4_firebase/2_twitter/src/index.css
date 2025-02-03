@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #000000;
+  --color-secondary: #e7e9ea;
+  --color-tw-blue: #1d9bf0;
+  --color-tw-gray: #2f3336;
+}
+
+@layer components {
+  .input {
+    @apply bg-secondary text-black rounded mt-1 p-2 outline-none shadow-lg focus:shadow-[gray] w-full;
+  }
+}
