@@ -7,8 +7,18 @@
   --color-tw-gray: #2f3336;
 }
 
+@layer utilities {
+  h6 {
+    @apply text-center mt-[400px] text-3xl;
+  }
+}
+
 @layer components {
   .input {
     @apply bg-secondary text-black rounded mt-1 p-2 outline-none shadow-lg focus:shadow-[gray] w-full;
+  }
+
+  .form-icon {
+    @apply hover:bg-tw-blue/20 rounded-full size-8 grid place-items-center cursor-pointer transition;
   }
 }

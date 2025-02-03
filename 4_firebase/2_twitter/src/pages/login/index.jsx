@@ -1,4 +1,4 @@
-import Form from "../../components/form";
+import Form from "../../components/login-form";
 import GoogleButton from "./google-button";
 
 const Login = () => {
