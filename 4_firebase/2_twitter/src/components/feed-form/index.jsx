@@ -74,18 +74,14 @@ const Form = ({ user }) => {
 
   return (
     <div className="border-b border-tw-gray p-4 flex gap-3">
-      <UserAvatar user={user} />
+      <UserAvatar photo={user.photoURL} name={user.displayName} />
 
       <form onSubmit={handleSubmit} className="w-full pt-1">
         <TextArea />
 
         <ImagePreview image={image} clearImage={clearImage} />
 
-        <FormActions
-          isLoading={isLoading}
-          fileInputRef={fileInputRef}
-          onImageChange={onImageChange}
-        />
+        <FormActions isLoading={isLoading} fileInputRef={fileInputRef} onImageChange={onImageChange} />
       </form>
     </div>
   );

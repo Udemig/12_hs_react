@@ -10,4 +10,5 @@ const TextArea = () => {
   );
 };
 
-export default TextArea;
+// Bu component bir üst component'ın render olmasından kaynaklı olarak gereksiz yere render oluyordu önlemek için memo() kullandık
+export default React.memo(TextArea);

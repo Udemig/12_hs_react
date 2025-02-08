@@ -1,11 +1,7 @@
-const UserAvatar = ({ user }) => {
-  return (
-    <img
-      src={user.photoURL}
-      alt={user.displayName}
-      className="size-[35px] md:size-[45px] rounded-full"
-    />
-  );
+import React from "react";
+
+const UserAvatar = ({ photo, name, designs }) => {
+  return <img src={photo} alt={name} className={`size-[35px] md:size-[45px] rounded-full ${designs}`} />;
 };
 
-export default UserAvatar;
+export default React.memo(UserAvatar);

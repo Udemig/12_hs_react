@@ -1,5 +1,5 @@
 const Aside = () => {
-  return <div className="max-xl:hidden">Aside</div>;
+  return <div className="max-xl:hidden"></div>;
 };
 
 export default Aside;
