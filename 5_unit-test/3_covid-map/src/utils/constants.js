@@ -13,3 +13,20 @@ export const totalData = {
 };
 
 export const geoUrl = "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
+
+export const mockData = {
+  continent: "Asia",
+  country: "Turkey",
+  capital: "Ankara",
+  currency: "Turkish lira",
+  day: "2025-02-15",
+  cases: 17232066,
+  deaths: 102174,
+  tests: 162743369,
+  population: 85561976,
+  flag: {
+    png: "https://flagcdn.com/w320/tr.png",
+    svg: "https://flagcdn.com/tr.svg",
+    alt: "The flag of Turkey",
+  },
+};
