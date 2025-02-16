@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .fs-1 {
+    @apply text-[clamp(40px,7vw,100px)];
+  }
+  .fs-4 {
+    @apply text-[clamp(18px,2vw,24px)];
+  }
+  .fs-5 {
+    @apply text-[clamp(16px,2vw,20px)];
+  }
+
+  .hero-btn {
+    @apply w-[40%] fs-5 py-4 border rounded-[10px] hover:bg-white/30 transition;
+  }
+
+  .card-btn {
+    @apply border rounded-[16px] p-[14px] border-white/50 bg-white/15 hover:bg-white/40 transition;
+  }
+
+  .list-btn {
+    @apply bg-white rounded-full px-4 py-1 pr-14 flex items-center gap-2 text-[20px] lg:text-[24px] font-semibold text-black relative hover:bg-gray-200 transition shadow-lg shadow-gray-300/90;
+  }
+
+  .select-btn {
+    @apply flex-1 border rounded-md py-2 px-4 text-center hover:bg-white/30 cursor-pointer transition duration-300;
+  }
+}
