@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AmountPicker bileşenin genel render çıktısı snapshot ile korunuyor 1`] = `
+<div
+  class="flex border rounded-md"
+>
+  <button
+    class="px-3 py-1 border-r hover:bg-zinc-300/30 transition"
+  >
+    -
+  </button>
+  <span
+    class="w-8 text-center py-1"
+  >
+    3
+  </span>
+  <button
+    class="px-3 py-1 border-l hover:bg-zinc-300/30 transition"
+  >
+    +
+  </button>
+</div>
+`;
