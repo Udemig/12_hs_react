@@ -34,7 +34,9 @@ const cartSlice = createSlice({
       }
     },
 
-    creteOrder: (state, { payload }) => {},
+    createOrder: (state) => {
+      state.cart = [];
+    },
   },
 });
 
