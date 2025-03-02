@@ -25,4 +25,22 @@ math.topla(19);
 // doğrudan class üzerinden erişilebilir (kolay)
 Matematik.carp(10, 20);
 
-//TODO STATIC Property
+// Static Property
+// Doğrudan class üzerinden erişebildiğimiz değişkenler
+
+class Ogrenci {
+  isim: string;
+  static ogrenciSayisi: number = 0;
+
+  constructor(isim: string) {
+    this.isim = isim;
+    Ogrenci.ogrenciSayisi++;
+  }
+}
+
+const o1 = new Ogrenci("Ali");
+const o2 = new Ogrenci("Ahmet");
+const o3 = new Ogrenci("Fatma");
+
+console.log(o1, o2, o3);
+console.log("Toplam Öğrenci", Ogrenci.ogrenciSayisi);
