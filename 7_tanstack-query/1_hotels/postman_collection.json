@@ -1,0 +1,234 @@
+{
+  "info": {
+    "name": "Hotels API Collection",
+    "description": "Bu koleksiyon otel/konaklama API'si için tüm istekleri içerir",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Konaklama Noktaları",
+      "item": [
+        {
+          "name": "Tüm Konaklama Noktalarını Getir",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4001/api/places",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4001",
+              "path": ["api", "places"]
+            },
+            "description": "Sistemdeki tüm konaklama noktalarını getirir."
+          },
+          "response": []
+        },
+        {
+          "name": "İsme Göre Filtrele",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4001/api/places?title=otel",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4001",
+              "path": ["api", "places"],
+              "query": [
+                {
+                  "key": "title",
+                  "value": "otel"
+                }
+              ]
+            },
+            "description": "Konaklama noktalarını isimlerine göre filtreler."
+          },
+          "response": []
+        },
+        {
+          "name": "Konuma Göre Filtrele",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4001/api/places?location=istanbul",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4001",
+              "path": ["api", "places"],
+              "query": [
+                {
+                  "key": "location",
+                  "value": "istanbul"
+                }
+              ]
+            },
+            "description": "Konaklama noktalarını konuma göre filtreler."
+          },
+          "response": []
+        },
+        {
+          "name": "Fiyata Göre Sırala (Artan)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4001/api/places?order=price-asc",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4001",
+              "path": ["api", "places"],
+              "query": [
+                {
+                  "key": "order",
+                  "value": "price-asc"
+                }
+              ]
+            },
+            "description": "Konaklama noktalarını fiyata göre artan şekilde sıralar."
+          },
+          "response": []
+        },
+        {
+          "name": "Fiyata Göre Sırala (Azalan)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4001/api/places?order=price-desc",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4001",
+              "path": ["api", "places"],
+              "query": [
+                {
+                  "key": "order",
+                  "value": "price-desc"
+                }
+              ]
+            },
+            "description": "Konaklama noktalarını fiyata göre azalan şekilde sıralar."
+          },
+          "response": []
+        },
+        {
+          "name": "Puanlara Göre Sırala (Artan)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4001/api/places?order=rating-asc",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4001",
+              "path": ["api", "places"],
+              "query": [
+                {
+                  "key": "order",
+                  "value": "rating-asc"
+                }
+              ]
+            },
+            "description": "Konaklama noktalarını puanlara göre artan şekilde sıralar."
+          },
+          "response": []
+        },
+        {
+          "name": "Puanlara Göre Sırala (Azalan)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4001/api/places?order=rating-desc",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4001",
+              "path": ["api", "places"],
+              "query": [
+                {
+                  "key": "order",
+                  "value": "rating-desc"
+                }
+              ]
+            },
+            "description": "Konaklama noktalarını puanlara göre azalan şekilde sıralar."
+          },
+          "response": []
+        },
+        {
+          "name": "Belirli Bir Konaklama Noktasını Getir",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4001/api/place/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4001",
+              "path": ["api", "place", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "",
+                  "description": "Konaklama noktasının ID'si"
+                }
+              ]
+            },
+            "description": "ID'ye göre belirli bir konaklama noktası bilgilerini getirir."
+          },
+          "response": []
+        },
+        {
+          "name": "Yeni Konaklama Noktası Ekle",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Yeni Lüks Otel\",\n  \"location\": \"İstanbul\",\n  \"address\": \"Örnek Adres Caddesi No:123\",\n  \"description\": \"Bu otel harika bir konumda yer almaktadır. Şehir manzaralı odalar ve lüks hizmetler sunmaktadır.\",\n  \"amenities\": \"WiFi,Havuz,Restoran,Spa\",\n  \"rating\": 4.7,\n  \"price_per_night\": 750\n}"
+            },
+            "url": {
+              "raw": "http://localhost:4001/api/places",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4001",
+              "path": ["api", "places"]
+            },
+            "description": "Yeni bir konaklama noktası ekler. Tüm alanların doldurulması gereklidir."
+          },
+          "response": []
+        },
+        {
+          "name": "Konaklama Noktasını Sil",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:4001/api/place/:id",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "4001",
+              "path": ["api", "place", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "",
+                  "description": "Silinecek konaklama noktasının ID'si"
+                }
+              ]
+            },
+            "description": "ID'ye göre bir konaklama noktasını siler."
+          },
+          "response": []
+        }
+      ],
+      "description": "Konaklama noktaları ile ilgili tüm API istekleri."
+    }
+  ]
+}

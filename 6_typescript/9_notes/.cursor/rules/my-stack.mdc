@@ -1,0 +1,16 @@
+---
+description: Tech Stack
+globs: 
+---
+# Core Stack
+
+- Bundler: Vite
+- Framework: React
+- Language: TypeScript
+
+# Additional Libraries
+
+- Routing: React Router DOM
+- State Management: Redux Toolkit - Redux Persist
+- Styling: Metarial UI
+- Testing: Jest, React Testing Library
