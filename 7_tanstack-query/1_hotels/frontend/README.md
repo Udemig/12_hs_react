@@ -37,3 +37,24 @@
 
 - useQuery
 - useMutation
+
+### useQuery Hook'u
+
+- useQuery hook'una benzersiz bir isim ve api isteğini atan fonksiyon verilir
+- Api isteğinin tüm sürecini otomatik yönetir
+- İstek durumunu (loading, error, data) otomatik takip eder
+- Hata durumunda 3 kez daha deneme yapar
+- Başarılı cevapları otomatik olarak cache'ler
+- Aynı veriyi kullanan birden fazla component olduğunda sadece ilk istek api'ye gider, diğerleri cache'den alır
+- State management ihtiyacını ortadan kaldırır
+
+```ts
+useQuery({
+  // sorgu için benzersiz bir isim
+  queryKey: ["places"],
+  // api isteği atan fonksiyon
+  queryFn: () => {
+    api.get<PlacesResponse>("/places").then((res) => res.data.places);
+  },
+});
+```
