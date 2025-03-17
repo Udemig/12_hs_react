@@ -1,6 +1,8 @@
-import { useQuery } from "@tanstack/react-query";
-import { PlacesResponse } from "../types";
+import { useMutation, useQuery } from "@tanstack/react-query";
+import { Place, PlaceData, PlaceResponse, PlacesResponse } from "../types";
 import api from "./api";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 /*
  * useQuery hookuna api isteğinin ismini ve isteği atan fonksiyonu veriyoruz
@@ -27,5 +29,52 @@ export const usePlaces = (paramsObj?: any) => {
     staleTime: 0,
     // cache'deki verinin "bayat olma / temzilenme" süresi - garbage collection
     gcTime: 300000,
+  });
+};
+
+export const useCreatePlace = () => {
+  const navigate = useNavigate();
+
+  return useMutation({
+    // mutation key
+    mutationKey: ["create"],
+    // api isteğini atan fonksiyon
+    mutationFn: (body: PlaceData) => api.post("/places", body),
+    // istek başarılı olduğunda
+    onSuccess: (res) => {
+      toast.success("Konaklama noktası oluşturuldu");
+      navigate(`/`);
+    },
+    // istek başarısız olduğunda
+    onError: (error) => {
+      toast.error("Bir hata oluştus");
+    },
+  });
+};
+
+export const usePlace = (id: string) => {
+  return useQuery({
+    queryKey: ["place"],
+    queryFn: () =>
+      api.get<PlaceResponse>(`/place/${id}`).then((res) => res.data.place),
+  });
+};
+
+export const useRemovePlace = () => {
+  const navigate = useNavigate();
+
+  return useMutation({
+    mutationKey: ["remove"],
+
+    mutationFn: (id: number) => api.delete(`/place/${id}`),
+
+    onSuccess: () => {
+      toast.success("Konaklama noktası kaldırıldı");
+      navigate("/");
+    },
+
+    onError: () => {
+      toast.error("Bir hata oluştu");
+    },
   });
 };

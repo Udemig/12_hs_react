@@ -58,3 +58,18 @@ useQuery({
   },
 });
 ```
+
+# Formik
+
+- Form'larda state yönetimi için kullanılan bir kütüphane.
+- Form içerisindeki inputların değerlerini ve hatalarını yönetmek için kullanılır.
+
+# Regex
+
+- Regular Expression
+- Düzenli ifadeler
+- String içerisinde arama yapmak için kullanılır
+- Örnek: "1234567890" stringi içerisinde "567" aramak için "567" yazılır
+- String metinlerin belirli koşullara uygun olup olmadığını kontrol etmek için kullanılır
+- Örneğin bir şifre alanının yeterince güçlü olup olmadığını kontrol etmek için büyük harf, küçük harf, sayı ve özel karakter içermesi gerektiğini belirtmek için kullanılır.
+- Bir isim alanında sadece harflerin kullanılmasını sağlamak için kullanılır.
