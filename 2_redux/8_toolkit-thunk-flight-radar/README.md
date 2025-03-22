@@ -10,3 +10,12 @@
 - react-paginate
 - bootstrap
 - axios
+
+# Ç
+
+- Kendine İnanmak
+- Sadece tutuorial kaçınmak.
+- Proje
+- Herşeyi ezberleme
+- Konunun temllerini odaklanmak
+- Yan Projeler
