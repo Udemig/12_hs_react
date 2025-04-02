@@ -1,10 +1,4 @@
-import {
-  collection,
-  onSnapshot,
-  query,
-  where,
-  orderBy,
-} from "firebase/firestore";
+import { collection, onSnapshot, query, where, orderBy } from "firebase/firestore";
 import { useEffect, useRef, useState } from "react";
 import { auth, db } from "../firebase";
 import Message from "./Message";
@@ -22,11 +16,7 @@ const Main = ({ room }) => {
     const collectionRef = collection(db, "messages");
 
     // sorgu ayarlarını yap
-    const q = query(
-      collectionRef,
-      where("room", "==", room),
-      orderBy("createdAt", "asc")
-    );
+    const q = query(collectionRef, where("room", "==", room), orderBy("createdAt", "asc"));
 
     // verdiğimiz kolleksiyona bir dinleyici yerleştirip kolleksiyondaki her güncellemede güncel verileri fonksiyona data parametresi olarak aktarır
     const unsub = onSnapshot(q, (data) => {
@@ -72,8 +62,6 @@ const Main = ({ room }) => {
 
     setIsAtBottom(scrollTop + clientHeight >= scrollHeight - 200);
   };
-
-  console.log(messages[0].author);
 
   return (
     <main

@@ -155,6 +155,14 @@ router.post("/refresh", async (req, res) => {
       expiresIn: process.env.JWT_EXPIRE,
     });
 
+    // access tokenu cookie
+    res.cookie("accessToken", accessToken, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "strict",
+      maxAge: 60 * 60 * 1000, // 60 minutes
+    });
+
     res.json({ accessToken });
   } catch (error) {
     res.status(401).json({ message: "Invalid refresh token" });

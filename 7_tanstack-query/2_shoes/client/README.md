@@ -11,6 +11,10 @@
 - tailwindcss
 - react-icons
 
+# Kaynaklar
+
+- FİGMA TASARIM: https://www.figma.com/community/file/1214498651988846999
+
 # Token Yönetimi
 
 - En güvenli ve performanslı yöntem:
