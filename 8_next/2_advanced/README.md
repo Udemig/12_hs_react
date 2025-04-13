@@ -24,3 +24,63 @@
 - Next.js resimler için optimizasyona sahiptir.
 - Normal image etiket'i yerine next.js Image component'ı kullanılır.
 - Next.js resimlerin hem seo dostu hem de daha düşük boyutlu/hızlı ekrana basılmasını sağlar
+
+# Client Side Rendering (CSR) vs Server Side Rendering (SSR)
+
+- Client side rendering yöntemi uygulanan bir sayfaya girdiğimizde `js kodu` ve `boş html dosyası` indiririz. İndirilen js kodu `kendi cihazımızda` çalıştırılır ve sayfa içeriği oluşturulur.
+
+- Server side rendering yöntemi uygulanan bir sayfaya girdiğimizde `js kodu` ve `dolu html dosyası` indiririz. İndirilen html dosyası `server'da` oluşturulur ve sayfa içeriği oluşturulur.
+
+# Neden SSR kullanırız?
+
+1. Performans: JS kodu client'da çalışıcağına donanım olarak daha güçlü olan server'da çalıştığı için client'a daha az yük bindirir.
+
+2. SEO: SEO açısından SSR daha avantajlıdır. SSR sayfalarının içeriği server'da oluşturulduğu için arama motorları tarafından daha kolay indexlenebilir.
+
+# Nasıl SSR veya CSR renderlarız ?
+
+Next.js'de 2 farklı component türü vardır:
+
+1. Server Component: SSR için kullanılır.
+2. Client Component: CSR için kullanılır.
+
+- Next.js biz aksini belirtmedikçe her component'ı server component yapar.
+- Eğer bir component'ın en üstünde `use client` yazarsak bu component client component olur.
+
+- Not: Her component'ı server component yapamyız çünkü server component'lar kullanıcı etkileşimini (onClick,onSubmit) takip edemezler ve react hooks (useState,useEffect) kullanamazlar.
+
+# Next.js İmport
+
+- Bir içeriği import ederken iki farklı yöntem kullanabiliriz:
+
+1. `@` ile absolute import
+
+- Bu işaret varsayılan olarak import yolunu /src klasöründen başlatır
+- Bu sayede dosya konumu değiştirince hata alma ihtimalini ortadan kaldırırır çünkü import yolu değişmez.
+
+2. `./` ile relative import
+
+- Bu import yönteminde import ediceğimiz içerik mevcut dosyadan ne kadar uzaktaysa ona göre ... işaretleri import ederiz
+
+# Data Fetching
+
+- Next.js'de veri çekme olayının server component'larda yapılması önerilir.
+- Server component'larda veri çektiğimiz zaman next.js api'dan gelen cevabı cache'de tutar ve aynı api isteğini tekrar attığımız zaman api'da gitmek yerine cache'deki cevabı döndürür.
+
+- Bu sayede:
+- - ilk istek sonrasında api'dan cevap bekleme gerek kalmaz > daha hızlı
+- - api gereksiz istek gitmez > daha az yük
+- - cache özelliği sayesinde eğer api'dan gelen cevabı birden fazla component'da kullanmak istiyorsak redux vb. gerek kalmadan bütün component'larda api isteğini yapabiliriz.
+
+# SSG (Static Site Generation) & generateStaticParams
+
+- SSG, bir sayfanın statik olarak oluşturulmasıdır.
+- Bir sayfa parametre alıyorsa dinamik, parametre almıyorsa statik bir sayfadır.
+- generateStaticParams, dinamik bir sayfanın statik hale getirilmesi için kullanlan bir fonksiyondur.
+- generateStaticParams, return ettiği paramtrelere sahipr dinamik sayfalrın hepsini staitk olrak hazırlar.
+
+- revalidate:
+  - server component'larının cache'lenme süresini belirler
+  - generateStaticParams ile birlikte de kullanılabilir.
+  - eğer değeri 0 yaparsanız cache'lenmemesi anlamına gelir
+  - api isteklerinde api isteklerinin cache'de tutulam süresini belirlemek için de kullanıalbilir.

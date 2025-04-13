@@ -2,7 +2,6 @@ import delay from "@/app/utils/delay";
 
 const Users = async () => {
   await delay(2000);
-  throw new Error("Error");
 
   return (
     <div>

@@ -12,9 +12,35 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@layer base {
+  input {
+    @apply border border-gray-300 rounded-md p-2;
+  }
+
+  button {
+    @apply border border-white text-white p-2 rounded-md mx-5;
+  }
+}
+
 @layer components {
   .box {
     @apply border p-5 rounded-md;
+  }
+
+  .server-component {
+    @apply text-center border border-blue-500 bg-blue-500/10 w-full h-full grid place-items-center p-5;
+  }
+
+  .client-component {
+    @apply text-center border border-red-500 bg-red-500/10 w-full h-full grid place-items-center p-5;
+  }
+
+  .server {
+    @apply bg-blue-500 p-2 rounded-md text-sm font-semibold my-10 text-center;
+  }
+
+  .client {
+    @apply bg-red-500 p-2 rounded-md text-sm font-semibold my-10 text-center;
   }
 }
 
