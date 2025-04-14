@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Next.js’te **parallel routes (paralel rotalar)**, bir sayfanın farklı bölümlerini bağımsız olarak yönetmek istediğinde çok kullanışlı olur. Özellikle aynı sayfa içinde birden fazla “alt içerik” alanını senkronize etmeden göstermek gerektiğinde devreye girer.
 
-## Getting Started
+### 👇 Ne zaman kullanılır?
 
-First, run the development server:
+- Bir sayfa içinde birden fazla **bağımsız alan** varsa, her biri farklı rotalarla yönetiliyorsa.
+- Modal, tab, dashboard gibi farklı içeriklerin aynı anda render edilmesi ama birbirlerinden bağımsız olması gerekiyorsa.
+- Her alan kendi URL state’ini koruyacaksa.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## ✅ Örnek Senaryo: Dashboard Sayfası
+
+Bir admin paneli düşün:
+
+```
+/dashboard
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Bu sayfa üç ana bölüme sahip:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. 👤 `UserList` (sol kısımda kullanıcılar listesi)
+2. 📝 `UserDetail` (orta kısımda seçili kullanıcının detayları)
+3. 📈 `UserActivity` (sağ kısımda kullanıcının aktivite grafiği)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Bu üç alanın da **bağımsız** olarak çalışması gerekiyor:
 
-## Learn More
+- Kullanıcı seçtiğinde sadece orta kısım değişsin.
+- Sağdaki aktivite detayları kendi içinde bir rota ve state yönetsin.
+- Belki modal açıldığında sadece bir outlet üzerinde modal gösterilsin.
 
-To learn more about Next.js, take a look at the following resources:
+### 📂 Parallel Route ile Yapısı
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+/app
+  /dashboard
+    @users/page.tsx          → Sol panel (UserList)
+    @details/[id]/page.tsx   → Orta panel (UserDetail)
+    @activity/[id]/page.tsx  → Sağ panel (UserActivity)
+    layout.tsx               → Bu üç alanı birlikte yerleştirir
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```tsx
+// /app/dashboard/layout.tsx
 
-## Deploy on Vercel
+export default function DashboardLayout({ users, details, activity }) {
+  return (
+    <div className="dashboard">
+      <aside>{users}</aside>
+      <main>{details}</main>
+      <section>{activity}</section>
+    </div>
+  );
+}
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Şimdi URL şöyle olabilir:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+/dashboard
+/dashboard/details/123
+/dashboard/activity/123
+```
+
+Bu yapı sayesinde:
+
+- Her panel bağımsız yüklenir.
+- `@details` veya `@activity` rotaları değişince sadece o kısım render edilir.
+- Kullanıcı deneyimi hızlı, modüler ve yönetilebilir olur.
+
+---
+
+## 💡 Başka Örnekler
+
+- E-ticaret ürünü detay sayfası: Sol kısımda galeri, sağ kısımda ürün açıklaması, altta önerilen ürünler.
+- Messaging app: Sol panelde sohbet listesi, ortada seçili sohbet, sağda kişi detayları.
+- Modal routing: Sayfanın altında ana içerik devam ederken modal açılır, modal kendi rotasında çalışır.
+
+---
