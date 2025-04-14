@@ -4,9 +4,14 @@
 // Eğer bir server component içerisinde client component'un yapabilceği bir işe ihtiyacımız varsa, bu işlemi ayrıca bir client component oluşturarak ve onu server comp içerisidne kullanarak yaparız.
 
 import Button from "@/app/components/button";
+import { notFound, redirect } from "next/navigation";
 
 export default function Hakkimizda() {
   console.log("Hakkımızda Component'ı renderlandı");
+
+  if ("admin değilse") {
+    return notFound();
+  }
 
   return (
     <div className="server-component min-h-screen">

@@ -1,15 +1,24 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// remote font import
+import { Bungee_Spice } from "next/font/google";
+
+// remote font kurulumu
+const bungeeSpice = Bungee_Spice({
   subsets: ["latin"],
+  variable: "--font-bungee-spice",
+  weight: "400",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+// local font import
+import LocalFont from "next/font/local";
+
+// local font kurulumu
+const extraBlue = LocalFont({
+  src: "./assets/extra-blue.ttf",
+  variable: "--font-extra-blue",
+  weight: "100 700",
 });
 
 export const metadata = {
@@ -21,10 +30,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        //  style={{ fontFamily: bungeeSpice.style.fontFamily }}
+        className={`${bungeeSpice.variable} ${extraBlue.variable} antialiased`}
       >
         <Header />
-        {children}
+
+        <div className="font-extra-blue">{children}</div>
       </body>
     </html>
   );

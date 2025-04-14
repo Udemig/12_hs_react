@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Elma",
+    "category": "Meyve",
+    "price": 25,
+    "unit": "kg",
+    "stock": 100,
+    "origin": "Amasya",
+    "isOrganic": true,
+    "description": "Taze Amasya elması, sulu ve aromatik",
+    "nutritionalValue": "Vitamin C, lif ve antioksidan bakımından zengin",
+    "expiryDays": 14
+  },
+  {
+    "name": "Domates",
+    "category": "Sebze",
+    "price": 18,
+    "unit": "kg",
+    "stock": 150,
+    "origin": "Antalya",
+    "isOrganic": false,
+    "description": "Taze ve olgun domates",
+    "nutritionalValue": "Likopen, vitamin A ve C içerir",
+    "expiryDays": 7
+  },
+  {
+    "name": "Patates",
+    "category": "Sebze",
+    "price": 15,
+    "unit": "kg",
+    "stock": 200,
+    "origin": "Nevşehir",
+    "isOrganic": false,
+    "description": "Taze Nevşehir patatesi",
+    "nutritionalValue": "Karbonhidrat, potasyum ve vitamin C içerir",
+    "expiryDays": 30
+  },
+  {
+    "name": "Portakal",
+    "category": "Meyve",
+    "price": 22,
+    "unit": "kg",
+    "stock": 120,
+    "origin": "Mersin",
+    "isOrganic": true,
+    "description": "Sulu ve tatlı portakal",
+    "nutritionalValue": "Vitamin C bakımından zengin",
+    "expiryDays": 15
+  },
+  {
+    "name": "Muz",
+    "category": "Meyve",
+    "price": 35,
+    "unit": "kg",
+    "stock": 80,
+    "origin": "Anamur",
+    "isOrganic": true,
+    "description": "Tatlı ve olgun muz",
+    "nutritionalValue": "Potasyum ve vitamin B6 bakımından zengin",
+    "expiryDays": 7
+  },
+  {
+    "name": "Soğan",
+    "category": "Sebze",
+    "price": 12,
+    "unit": "kg",
+    "stock": 250,
+    "origin": "Ankara",
+    "isOrganic": false,
+    "description": "Kuru soğan",
+    "nutritionalValue": "Vitamin C, B6 ve manganez içerir",
+    "expiryDays": 30
+  },
+  {
+    "name": "Çilek",
+    "category": "Meyve",
+    "price": 45,
+    "unit": "kg",
+    "stock": 50,
+    "origin": "Bursa",
+    "isOrganic": true,
+    "description": "Taze ve aromatik çilek",
+    "nutritionalValue": "Vitamin C, manganez ve antioksidan bakımından zengin",
+    "expiryDays": 5
+  },
+  {
+    "name": "Salatalık",
+    "category": "Sebze",
+    "price": 20,
+    "unit": "kg",
+    "stock": 180,
+    "origin": "Antalya",
+    "isOrganic": false,
+    "description": "Taze salatalık",
+    "nutritionalValue": "Su oranı yüksek, vitamin K içerir",
+    "expiryDays": 7
+  },
+  {
+    "name": "Karpuz",
+    "category": "Meyve",
+    "price": 8,
+    "unit": "kg",
+    "stock": 70,
+    "origin": "Diyarbakır",
+    "isOrganic": false,
+    "description": "Tatlı ve sulu Diyarbakır karpuzu",
+    "nutritionalValue": "Likopen ve vitamin C içerir",
+    "expiryDays": 10
+  },
+  {
+    "name": "Havuç",
+    "category": "Sebze",
+    "price": 16,
+    "unit": "kg",
+    "stock": 190,
+    "origin": "Konya",
+    "isOrganic": true,
+    "description": "Taze havuç",
+    "nutritionalValue": "Beta karoten ve A vitamini bakımından zengin",
+    "expiryDays": 20
+  }
+] 

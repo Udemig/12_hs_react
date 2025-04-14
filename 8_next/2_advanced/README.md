@@ -79,8 +79,65 @@ Next.js'de 2 farklı component türü vardır:
 - generateStaticParams, dinamik bir sayfanın statik hale getirilmesi için kullanlan bir fonksiyondur.
 - generateStaticParams, return ettiği paramtrelere sahipr dinamik sayfalrın hepsini staitk olrak hazırlar.
 
+# ISR (Incremental Static Regeneration)
+
+- Dinamik içerikleri sahip (sosyal medya gönderileri) sayfaları statik olarak oluşturup arıdından belirli bir zaman aralıklarıyla bu içeriklerin güncel kalması için sayfanın tekrardan oluşturulmasını / verinin tekrar alınmasını sağlayan tekniktir
+
 - revalidate:
   - server component'larının cache'lenme süresini belirler
   - generateStaticParams ile birlikte de kullanılabilir.
   - eğer değeri 0 yaparsanız cache'lenmemesi anlamına gelir
   - api isteklerinde api isteklerinin cache'de tutulam süresini belirlemek için de kullanıalbilir.
+
+# Font
+
+- Next.js resimlerde olduğu gibi fontlar da optimize edilmiştir.
+- Örneğin bir fontun sadace projede kullanılan boyutlarını import eder.
+- Bu sayede font boyutu küçültülür ve sayfa yükleme hızı artar.
+- İki farklı şekilde font import edilebilir:
+
+1. Local Font
+
+- Font dosyasının proje içerisinde bulunması gerekir.
+
+2. Remote Font
+
+- Fontun google fonts linki kullanılır
+
+# Next Methods
+
+## useRouter
+
+- sadece `client component` içerisinde kullanılır
+- proje içerisinde yönlendirme yapmak için kullanılır
+- back() | forward() | push() | refresh() | replace()
+
+## redirect
+
+- sadece `server component` içerisinde kullanılır
+- proje içerisinde yönlendirme yapmak için kullanılır
+- redirect("/")
+
+## notFound
+
+- hem `server component` hem `client component` içerisinde kullanılır
+- 404 sayfasını renderlar
+- notFound()
+
+## usePathname
+
+- sadece `client component` içerisinde kullanılır
+- proje içerisindeki aktif route'u döndürür
+- usePathname()
+
+## useParams
+
+- sadece `client component` içerisinde kullanılır
+- kullancığı bulunduğu route'un parametrelerini döndürür
+- useParams()
+
+## useSearchParams
+
+- sadece `client component` içerisinde kullanılır
+- kullancığı bulunduğu route'un query parametrelerini döndürür
+- useSearchParams()
