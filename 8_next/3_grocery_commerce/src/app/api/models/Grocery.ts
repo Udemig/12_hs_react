@@ -12,6 +12,7 @@ export interface IGrocery {
   description: string;
   nutritionalValue: string;
   expiryDays: number;
+  photo: string;
 }
 
 const grocerySchema = new Schema<IGrocery>({
@@ -56,9 +57,13 @@ const grocerySchema = new Schema<IGrocery>({
     type: Number,
     required: [true, "raf ömrü değeri zorunludur"],
   },
+  photo: {
+    type: String,
+  },
 });
 
 // Her importta yeniden model oluşturmasını önlemek için önce mevcut modellerin arasında Grocery model var mı kontrol ediyoruz varsa onu export ediyoruz yoksa yenisini oluşturup export ediyoruz
-const Grocery = mongoose.models?.Grocery || mongoose.model("Grocery", grocerySchema);
+const Grocery =
+  mongoose.models?.Grocery || mongoose.model("Grocery", grocerySchema);
 
-export default Grocery; 
+export default Grocery;

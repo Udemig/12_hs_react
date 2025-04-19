@@ -1,3 +1,11 @@
+# Paketler
+
+- Api klasörünü projeye dahil ettikten sonra indirmeniz gereken paketler:
+- mongoose
+- stripe
+
+# Parallel Routes
+
 Next.js’te **parallel routes (paralel rotalar)**, bir sayfanın farklı bölümlerini bağımsız olarak yönetmek istediğinde çok kullanışlı olur. Özellikle aynı sayfa içinde birden fazla “alt içerik” alanını senkronize etmeden göstermek gerektiğinde devreye girer.
 
 ### 👇 Ne zaman kullanılır?
@@ -76,3 +84,33 @@ Bu yapı sayesinde:
 - Modal routing: Sayfanın altında ana içerik devam ederken modal açılır, modal kendi rotasında çalışır.
 
 ---
+
+## Dizi içerisindeki nesneleri dinamik olarak gruplandırma
+
+```ts
+// elimdeki diziyi istediğim formatta dönüştürmek için
+const groupedProducts = groceries.reduce<Record<string, Product[]>>(
+  (groups, products) => {
+    const category = products.category;
+
+    if (!groups[category]) {
+      groups[category] = [];
+    }
+
+    groups[category].push(products);
+
+    return groups;
+  },
+  {}
+);
+
+// reduce'dan önceki hali
+//? const groceries = [{cat:"a"},{cat:"b"},{cat:"a"},{cat:"b"}]
+
+// reduce'dan sonraki hali
+//? const groupedProducts = { a:[{cat:"a"},{cat:"a"}],  b:[{cat:"b"},{cat:"b"}]}
+```
+
+## 🔑 Object.keys Kullanma Sebebi
+
+`Object.keys()` metodu bir objenin tüm keylerini dizi olarak döndürür.

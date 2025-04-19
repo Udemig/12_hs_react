@@ -32,8 +32,9 @@ export default function Categories() {
 
   return (
     <section className="mt-10 mb-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-      {options.map((option) => (
+      {options.map((option, key) => (
         <div
+          key={key}
           className={`flex items-center gap-3 p-4 rounded-lg ${option.bgColor}`}
         >
           {option.icon}
