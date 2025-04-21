@@ -3,17 +3,22 @@
 import { addToBasket } from "@/app/service/basket-service";
 import { useState } from "react";
 import { FaPlus, FaSpinner } from "react-icons/fa";
+import { toast } from "react-toastify";
+import { userId } from "@/app/utils/constants";
+import { useRouter } from "next/navigation";
 
 export default function CardActions({ productId }: { productId: string }) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-
-  const userId = "furkan123"; // gerçek uygulamada kullanıcı id'si dinamik olucak
+  const router = useRouter();
 
   const handleAddToCart = () => {
     setIsLoading(true);
 
     addToBasket(userId, productId, 1)
-      .then(() => alert("sepete eklendi"))
+      .then(() => {
+        toast.success("Ürün sepete eklendi");
+        router.refresh();
+      })
       .finally(() => setIsLoading(false))
       .catch((err) => {
         console.log(err);

@@ -1,447 +1,367 @@
 {
-	"info": {
-		"_postman_id": "80d5e8bc-35f6-4682-a753-4f9d80e33a96",
-		"name": "Manav API",
-		"description": "Manav (Greengrocer) API endpoints for testing",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "Grocery",
-			"item": [
-				{
-					"name": "Get All Groceries",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/api/groceries",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"groceries"
-							]
-						},
-						"description": "Tüm manav ürünlerini listeler"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Grocery By ID",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/api/groceries/{{grocery_id}}",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"groceries",
-								"{{grocery_id}}"
-							]
-						},
-						"description": "ID ile belirli bir manav ürününü getirir"
-					},
-					"response": []
-				}
-			],
-			"description": "Manav ürünleri ile ilgili endpointler"
-		},
-		{
-			"name": "Cart",
-			"item": [
-				{
-					"name": "Get Cart",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/api/cart?userId={{user_id}}",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"cart"
-							],
-							"query": [
-								{
-									"key": "userId",
-									"value": "{{user_id}}"
-								}
-							]
-						},
-						"description": "Kullanıcının sepetini getirir"
-					},
-					"response": []
-				},
-				{
-					"name": "Add to Cart",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"userId\": \"{{user_id}}\",\n    \"groceryId\": \"{{grocery_id}}\",\n    \"quantity\": 2\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/cart",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"cart"
-							]
-						},
-						"description": "Sepete ürün ekler veya günceller"
-					},
-					"response": []
-				},
-				{
-					"name": "Empty Cart",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/api/cart?userId={{user_id}}",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"cart"
-							],
-							"query": [
-								{
-									"key": "userId",
-									"value": "{{user_id}}"
-								}
-							]
-						},
-						"description": "Sepeti tamamen boşaltır"
-					},
-					"response": []
-				},
-				{
-					"name": "Update Cart Item",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"userId\": \"{{user_id}}\",\n    \"groceryId\": \"{{grocery_id}}\",\n    \"quantity\": 3\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/cart/item",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"cart",
-								"item"
-							]
-						},
-						"description": "Sepetteki bir ürünün miktarını günceller"
-					},
-					"response": []
-				},
-				{
-					"name": "Remove Cart Item",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/api/cart/item?userId={{user_id}}&groceryId={{grocery_id}}",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"cart",
-								"item"
-							],
-							"query": [
-								{
-									"key": "userId",
-									"value": "{{user_id}}"
-								},
-								{
-									"key": "groceryId",
-									"value": "{{grocery_id}}"
-								}
-							]
-						},
-						"description": "Sepetten belirli bir ürünü kaldırır"
-					},
-					"response": []
-				}
-			],
-			"description": "Sepet işlemleri ile ilgili endpointler"
-		},
-		{
-			"name": "Orders",
-			"item": [
-				{
-					"name": "Get All Orders",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/api/orders",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"orders"
-							]
-						},
-						"description": "Tüm siparişleri listeler"
-					},
-					"response": []
-				},
-				{
-					"name": "Create Order",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"product\": \"{{grocery_id}}\",\n    \"quantity\": 2,\n    \"money_spend\": 50,\n    \"currency\": \"TRY\",\n    \"customer_name\": \"Ahmet Yılmaz\",\n    \"customer_phone\": \"05551234567\",\n    \"delivery_address\": \"Örnek Mahallesi, Test Sokak No:123, İstanbul\",\n    \"is_delivery\": true\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/orders",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"orders"
-							]
-						},
-						"description": "Yeni bir sipariş oluşturur"
-					},
-					"response": []
-				},
-				{
-					"name": "Get Order By ID",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/api/orders/{{order_id}}",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"orders",
-								"{{order_id}}"
-							]
-						},
-						"description": "ID ile belirli bir siparişi getirir"
-					},
-					"response": []
-				},
-				{
-					"name": "Update Order",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"quantity\": 3,\n    \"delivery_address\": \"Yeni Mahalle, Farklı Sokak No:456, İstanbul\",\n    \"is_delivery\": true\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/orders/{{order_id}}",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"orders",
-								"{{order_id}}"
-							]
-						},
-						"description": "Bir siparişi günceller"
-					},
-					"response": []
-				},
-				{
-					"name": "Delete Order",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/api/orders/{{order_id}}",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"orders",
-								"{{order_id}}"
-							]
-						},
-						"description": "Bir siparişi siler"
-					},
-					"response": []
-				}
-			],
-			"description": "Siparişler ile ilgili endpointler"
-		},
-		{
-			"name": "Checkout",
-			"item": [
-				{
-					"name": "Checkout Single Item",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"grocery\": {\n        \"_id\": \"{{grocery_id}}\",\n        \"name\": \"Elma\",\n        \"price\": 25,\n        \"description\": \"Taze Amasya elması\"\n    },\n    \"quantity\": 2,\n    \"customerInfo\": {\n        \"name\": \"Mehmet Öz\",\n        \"phone\": \"05559876543\",\n        \"deliveryAddress\": \"Bahçeli Mahalle, Meyve Sokak No:45, Ankara\",\n        \"isDelivery\": true\n    }\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/checkout",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"checkout"
-							]
-						},
-						"description": "Tek bir manav ürünü satın alma işlemi"
-					},
-					"response": []
-				},
-				{
-					"name": "Checkout Cart",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"userId\": \"{{user_id}}\",\n    \"customerInfo\": {\n        \"name\": \"Mehmet Öz\",\n        \"phone\": \"05559876543\",\n        \"deliveryAddress\": \"Bahçeli Mahalle, Meyve Sokak No:45, Ankara\",\n        \"isDelivery\": true\n    }\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/checkout",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"checkout"
-							]
-						},
-						"description": "Sepetteki tüm ürünleri satın alma işlemi"
-					},
-					"response": []
-				}
-			],
-			"description": "Ödeme işlemleri ile ilgili endpointler"
-		}
-	],
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		}
-	],
-	"variable": [
-		{
-			"key": "grocery_id",
-			"value": "put_grocery_id_here",
-			"type": "string"
-		},
-		{
-			"key": "order_id",
-			"value": "put_order_id_here",
-			"type": "string"
-		},
-		{
-			"key": "user_id",
-			"value": "user123",
-			"type": "string"
-		}
-	]
-} 
+  "info": {
+    "_postman_id": "80d5e8bc-35f6-4682-a753-4f9d80e33a96",
+    "name": "Manav API",
+    "description": "Manav (Greengrocer) API endpoints for testing",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Grocery",
+      "item": [
+        {
+          "name": "Get All Groceries",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/groceries",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "groceries"]
+            },
+            "description": "Tüm manav ürünlerini listeler"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Grocery By ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/groceries/{{grocery_id}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "groceries", "{{grocery_id}}"]
+            },
+            "description": "ID ile belirli bir manav ürününü getirir"
+          },
+          "response": []
+        }
+      ],
+      "description": "Manav ürünleri ile ilgili endpointler"
+    },
+    {
+      "name": "Cart",
+      "item": [
+        {
+          "name": "Get Cart",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/cart?userId={{user_id}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "cart"],
+              "query": [
+                {
+                  "key": "userId",
+                  "value": "{{user_id}}"
+                }
+              ]
+            },
+            "description": "Kullanıcının sepetini getirir"
+          },
+          "response": []
+        },
+        {
+          "name": "Add to Cart",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": \"{{user_id}}\",\n    \"groceryId\": \"{{grocery_id}}\",\n    \"quantity\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/cart",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "cart"]
+            },
+            "description": "Sepete ürün ekler veya günceller"
+          },
+          "response": []
+        },
+        {
+          "name": "Empty Cart",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/cart?userId={{user_id}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "cart"],
+              "query": [
+                {
+                  "key": "userId",
+                  "value": "{{user_id}}"
+                }
+              ]
+            },
+            "description": "Sepeti tamamen boşaltır"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Cart Item",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": \"{{user_id}}\",\n    \"groceryId\": \"{{grocery_id}}\",\n    \"quantity\": 3\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/cart/item",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "cart", "item"]
+            },
+            "description": "Sepetteki bir ürünün miktarını günceller"
+          },
+          "response": []
+        },
+        {
+          "name": "Remove Cart Item",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/cart/item?userId={{user_id}}&groceryId={{grocery_id}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "cart", "item"],
+              "query": [
+                {
+                  "key": "userId",
+                  "value": "{{user_id}}"
+                },
+                {
+                  "key": "groceryId",
+                  "value": "{{grocery_id}}"
+                }
+              ]
+            },
+            "description": "Sepetten belirli bir ürünü kaldırır"
+          },
+          "response": []
+        }
+      ],
+      "description": "Sepet işlemleri ile ilgili endpointler"
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Get All Orders",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/orders",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "orders"]
+            },
+            "description": "Tüm siparişleri listeler"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Order",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"product\": \"{{grocery_id}}\",\n    \"quantity\": 2,\n    \"money_spend\": 50,\n    \"currency\": \"TRY\",\n    \"customer_name\": \"Ahmet Yılmaz\",\n    \"customer_phone\": \"05551234567\",\n    \"delivery_address\": \"Örnek Mahallesi, Test Sokak No:123, İstanbul\",\n    \"is_delivery\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/orders",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "orders"]
+            },
+            "description": "Yeni bir sipariş oluşturur"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Order By ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/orders/{{order_id}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "orders", "{{order_id}}"]
+            },
+            "description": "ID ile belirli bir siparişi getirir"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Order",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"quantity\": 3,\n    \"delivery_address\": \"Yeni Mahalle, Farklı Sokak No:456, İstanbul\",\n    \"is_delivery\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/orders/{{order_id}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "orders", "{{order_id}}"]
+            },
+            "description": "Bir siparişi günceller"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Order",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/orders/{{order_id}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "orders", "{{order_id}}"]
+            },
+            "description": "Bir siparişi siler"
+          },
+          "response": []
+        }
+      ],
+      "description": "Siparişler ile ilgili endpointler"
+    },
+    {
+      "name": "Checkout",
+      "item": [
+        {
+          "name": "Checkout Single Item",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"grocery\": {\n        \"_id\": \"{{grocery_id}}\",\n        \"name\": \"Elma\",\n        \"price\": 25,\n        \"description\": \"Taze Amasya elması\"\n    },\n    \"quantity\": 2,\n    \"customerInfo\": {\n        \"name\": \"Mehmet Öz\",\n        \"phone\": \"05559876543\",\n        \"deliveryAddress\": \"Bahçeli Mahalle, Meyve Sokak No:45, Ankara\",\n        \"isDelivery\": true\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/checkout",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "checkout"]
+            },
+            "description": "Tek bir manav ürünü satın alma işlemi"
+          },
+          "response": []
+        },
+        {
+          "name": "Checkout Cart",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"userId\": \"{{user_id}}\",\n    \"customerInfo\": {\n        \"name\": \"Mehmet Öz\",\n        \"phone\": \"05559876543\",\n        \"deliveryAddress\": \"Bahçeli Mahalle, Meyve Sokak No:45, Ankara\",\n        \"isDelivery\": true\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/checkout",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "checkout"]
+            },
+            "description": "Sepetteki tüm ürünleri satın alma işlemi"
+          },
+          "response": []
+        }
+      ],
+      "description": "Ödeme işlemleri ile ilgili endpointler"
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "grocery_id",
+      "value": "put_grocery_id_here",
+      "type": "string"
+    },
+    {
+      "key": "order_id",
+      "value": "put_order_id_here",
+      "type": "string"
+    },
+    {
+      "key": "user_id",
+      "value": "user123",
+      "type": "string"
+    }
+  ]
+}

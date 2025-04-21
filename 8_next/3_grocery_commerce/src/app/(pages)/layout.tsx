@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import Header from "../components/header";
+import { ToastContainer } from "react-toastify";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,12 +32,13 @@ export default function RootLayout({
         <div className="flex flex-col min-h-screen">
           <Header />
 
-          <main className="bg-light-gray flex-1">{children}</main>
+          <main className="bg-light-gray flex-1 text-black">{children}</main>
 
-          <footer className="bg-green-900 text-center p-6  text-sm">
+          <footer className="bg-green-900 text-center p-6 text-white text-sm">
             <p>&copy; {new Date().getFullYear()} Manav Online Market</p>
           </footer>
         </div>
+        <ToastContainer autoClose={2000} />
       </body>
     </html>
   );

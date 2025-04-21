@@ -46,4 +46,39 @@ type Cart = {
   };
 };
 
-export type { Product, GetProductsResponse, GetProductResponse, Cart };
+type SingleCheckoutResponse = {
+  url: string;
+};
+
+type GetBasketResponse = {
+  cart: {
+    _id: string;
+    userId: string;
+    items: {
+      grocery: Product;
+      quantity: number;
+      price: number;
+      name: string;
+      _id: string;
+    }[];
+
+    totalAmount: number;
+    createdAt: string;
+    updatedAt: string;
+    __v: number;
+  };
+};
+
+type MessageResponse = {
+  message: string;
+};
+
+export type {
+  Product,
+  GetProductsResponse,
+  GetProductResponse,
+  Cart,
+  SingleCheckoutResponse,
+  GetBasketResponse,
+  MessageResponse,
+};

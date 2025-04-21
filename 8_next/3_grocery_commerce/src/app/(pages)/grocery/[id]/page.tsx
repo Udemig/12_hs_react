@@ -5,6 +5,7 @@ import { FaArrowLeft, FaLeaf, FaShoppingBasket } from "react-icons/fa";
 import { TbWeight } from "react-icons/tb";
 import { MdOutlineLocalShipping } from "react-icons/md";
 import OrderButtons from "@/app/components/detail/order-buttons";
+import { notFound } from "next/navigation";
 
 type Props = {
   params: Promise<{ id: string }>;
@@ -14,26 +15,30 @@ export default async function GroceryPage({ params }: Props) {
   const { id } = await params;
   const { grocery } = await getProduct(id);
 
+  if (!grocery) {
+    return notFound();
+  }
+
   const info = [
     {
       title: "Kategori",
-      value: grocery.category,
+      value: grocery?.category,
     },
     {
       title: "Menşei",
-      value: grocery.origin,
+      value: grocery?.origin,
     },
     {
       title: "Tazelik",
-      value: `${grocery.expiryDays} gün`,
+      value: `${grocery?.expiryDays} gün`,
     },
     {
       title: "Organik",
-      value: grocery.isOrganic ? "Evet" : "Hayır",
+      value: grocery?.isOrganic ? "Evet" : "Hayır",
     },
     {
       title: "Birim",
-      value: grocery.unit,
+      value: grocery?.unit,
     },
   ];
 

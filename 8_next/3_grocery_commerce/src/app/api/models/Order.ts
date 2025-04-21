@@ -24,11 +24,12 @@ const orderSchema = new Schema<IOrder>(
     customer_name: { type: String, required: true },
     customer_phone: { type: String, required: true },
     delivery_address: String,
-    is_delivery: { type: Boolean, default: false }
+    is_delivery: { type: Boolean, default: false },
   },
   { timestamps: true }
 );
 
-const Order = mongoose.models.Order || mongoose.model<IOrder>("Order", orderSchema);
+const Order =
+  mongoose.models.Order || mongoose.model<IOrder>("Order", orderSchema);
 
 export default Order;

@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+  .page {
+    @apply p-5 md:px-8;
+  }
+
+  .title {
+    @apply text-2xl font-bold md:text-3xl;
+  }
+
+  .subtitle {
+    @apply font-semibold text-lg md:text-xl;
+  }
+
+  .button {
+    @apply border shadow rounded-md p-2 hover:shadow-lg transition;
+  }
+}
+
+@layer utilities {
+}
+
+.navbar {
+  label {
+    cursor: pointer;
+  }
+
+  input,
+  .nav-text {
+    display: none;
+  }
+
+  &:has(input:checked) .nav-text {
+    display: block;
+  }
+}

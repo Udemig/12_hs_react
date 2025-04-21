@@ -11,25 +11,31 @@ export async function GET() {
     return NextResponse.json({ orders });
   } catch (error) {
     console.log(error);
-    return NextResponse.json({ message: "Siparişler alınamadı" }, { status: 500 });
+    return NextResponse.json(
+      { message: "Siparişler alınamadı" },
+      { status: 500 }
+    );
   }
 }
 
 export async function POST(req: Request) {
   try {
     await connectMongo();
-    
+
     const orderData = await req.json();
-    
+
     // Sipariş oluştur
     const newOrder = await Order.create(orderData);
-    
-    return NextResponse.json({ 
-      message: "Sipariş başarıyla oluşturuldu", 
-      order: newOrder 
+
+    return NextResponse.json({
+      message: "Sipariş başarıyla oluşturuldu",
+      order: newOrder,
     });
   } catch (error) {
     console.log(error);
-    return NextResponse.json({ message: "Sipariş oluşturulamadı" }, { status: 500 });
+    return NextResponse.json(
+      { message: "Sipariş oluşturulamadı" },
+      { status: 500 }
+    );
   }
 }
