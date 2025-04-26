@@ -11,7 +11,7 @@ export default function NavLink({ name, icon, url }: Option) {
     <Link
       href={url || "/"}
       className={`flex items-center gap-2 p-5 hover:bg-gray-100 transition border-l-2 border-transparent ${
-        path === url ? "text-blue-500 !border-blue-500" : ""
+        path.includes(url as string) ? "text-blue-500 !border-blue-500" : ""
       }`}
     >
       {icon}

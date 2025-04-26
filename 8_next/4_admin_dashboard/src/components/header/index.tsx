@@ -5,7 +5,7 @@ import avatar from "@/assets/images/man.webp";
 
 export default function Header() {
   return (
-    <header className="border-b border-zinc-300 bg-white flex justify-between p-5 md:px-8">
+    <header className="border-b border-zinc-300 bg-white flex justify-between px-5 py-2 md:px-8">
       <Input />
 
       <div className="flex gap-5 items-center">

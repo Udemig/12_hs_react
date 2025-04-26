@@ -14,4 +14,26 @@ const getProducts = async (): Promise<Product[]> => {
   return res.json();
 };
 
-export { getOrders, getProducts };
+const deleteProduct = async (id: string): Promise<void> => {
+  const res = await fetch(`${BaseUrl}/products/${id}`, {
+    method: "DELETE", // GET dışındaki isteklerde methodu belirtmek gerekiyor
+  });
+
+  return res.json();
+};
+
+const createProduct = async (
+  product: Omit<Product, "id">
+): Promise<Product> => {
+  const res = await fetch(`${BaseUrl}/products`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(product),
+  });
+
+  return res.json();
+};
+
+export { getOrders, getProducts, deleteProduct, createProduct };

@@ -1,18 +1,6 @@
 {
   "products": [
     {
-      "id": "1",
-      "name": "Apple iPhone 14 Pro Max",
-      "category": "Electronics",
-      "price": 1299.99,
-      "stock": 25,
-      "description": "6.1-inch display, A15 Bionic chip, dual 12MP camera system.",
-      "image_url": "https://picsum.photos/seed/1/500/500",
-      "rating": 4.8,
-      "reviews_count": 102,
-      "brand": "Apple"
-    },
-    {
       "id": "2",
       "name": "Samsung Galaxy S23",
       "category": "Electronics",
@@ -119,6 +107,18 @@
       "image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/airpods-pro-2-hero-select-202409_FV1_FMT_WHH?wid=752&hei=636&fmt=jpeg&qlt=90&.v=1725492498882",
       "rating": 4.5,
       "reviews_count": 40
+    },
+    {
+      "id": "6421",
+      "name": "Şarj Aleti",
+      "brand": "Apple",
+      "category": "Elektronik",
+      "description": "selam bu şarj aleti......",
+      "image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/airpods-pro-2-hero-select-202409_FV1_FMT_WHH?wid=752&hei=636&fmt=jpeg&qlt=90&.v=1725492498882",
+      "price": 780,
+      "stock": 65,
+      "rating": -1,
+      "reviews_count": 43
     }
   ],
   "users": [

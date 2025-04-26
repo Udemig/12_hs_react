@@ -54,19 +54,17 @@ export const sections: Option[] = [
 
 export const inputs = [
   {
-    label: "İsim",
+    label: "Ürün Adı",
     name: "name",
+    type: "text",
   },
   {
     label: "Marka",
     name: "brand",
+    type: "text",
   },
   {
-    label: "Kategori",
-    name: "category",
-  },
-  {
-    label: "Fiyat",
+    label: "Fiyat (₺)",
     name: "price",
     type: "number",
   },
@@ -76,7 +74,19 @@ export const inputs = [
     type: "number",
   },
   {
-    label: "Açıklama",
-    name: "description",
+    label: "Rayting (0-5)",
+    name: "rating",
+    type: "number",
+    defaultValue: 0,
+    min: 0,
+    max: 5,
+  },
+  {
+    label: "Yorum Sayısı",
+    name: "reviews_count",
+    type: "number",
+    defaultValue: 0,
   },
 ];
+
+export const categories = ["Elektronik", "Giyim", "Aksesuar", "Ev", "Kitap"];

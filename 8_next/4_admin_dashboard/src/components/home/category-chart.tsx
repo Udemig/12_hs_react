@@ -20,7 +20,7 @@ export default async function CategoryChart() {
     labels,
     datasets: [
       {
-        label: "# of Votes",
+        label: "Kategorideki Ürün Sayısı",
         data: Object.values(object),
         backgroundColor: [
           "rgba(255, 99, 132, 0.2)",

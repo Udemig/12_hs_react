@@ -1,0 +1,470 @@
+{
+	"info": {
+		"_postman_id": "fc4bd551-6f5b-4d37-9b8b-b04b7a665adc",
+		"name": "Tour API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26044730",
+		"_collection_link": "https://winter-flare-727325.postman.co/workspace/5-backend~f88e1f44-15be-404b-a2f2-b6060336beae/collection/26044730-fc4bd551-6f5b-4d37-9b8b-b04b7a665adc?action=share&source=collection_link&creator=26044730"
+	},
+	"item": [
+		{
+			"name": "tours",
+			"item": [
+				{
+					"name": "getAllTours",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3Mzg2Mjc5ODc1MGE0NDk3ZjFmOWNhNiIsImlhdCI6MTczMTc0ODQ3NCwiZXhwIjoxNzM0MzQwNDc0fQ.jLYGwBv7E0DFLPfwHmpaRFqgh2nF84oiXCa9FhqDiTc",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{BASE_URL}}/api/tours",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"tours"
+							],
+							"query": [
+								{
+									"key": "price[lte]",
+									"value": "1200",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "-ratingsAverage,-ratingsQuantity",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "fields",
+									"value": "name,price,ratingsAverage,summary,difficulty",
+									"disabled": true
+								},
+								{
+									"key": "duration[gte]",
+									"value": "14",
+									"disabled": true
+								},
+								{
+									"key": "difficulty",
+									"value": "medium",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createTour",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Dağ Zirvesi Macerası\",\n  \"price\": 1500,\n  \"priceDiscount\": 1200,\n  \"duration\": 7,\n  \"difficulty\": \"hard\",\n  \"maxGroupSize\": 15,\n  \"ratingsAverage\": 4.5,\n  \"ratingsQuantity\": 30,\n  \"summary\": \"Bu tur, dağ zirvesine unutulmaz bir yolculuk sunar.\",\n  \"description\": \"Dağların muhteşem manzarasına tanık olun ve rehber eşliğinde zirveye ulaşın. Tüm malzemeler sağlanacaktır, ancak kondisyon gereklidir.\",\n  \"imageCover\": \"dag-zirvesi-macerasi.jpg\",\n  \"images\": [\n    \"dag-zirvesi-1.jpg\",\n    \"dag-zirvesi-2.jpg\",\n    \"dag-zirvesi-3.jpg\"\n  ],\n  \"startDate\": [\n    \"2024-07-10T00:00:00.000Z\",\n    \"2024-08-15T00:00:00.000Z\",\n    \"2024-09-20T00:00:00.000Z\"\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/tours"
+					},
+					"response": []
+				},
+				{
+					"name": "getTour",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BASE_URL}}/api/tours/5c88fa8cf4afda39709c2951"
+					},
+					"response": []
+				},
+				{
+					"name": "updateTour",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"price\":16000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/tours/672f3d28ff5adb9fe90da076"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTour",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{BASE_URL}}/api/tours/ID"
+					},
+					"response": []
+				},
+				{
+					"name": "getTopTours",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BASE_URL}}/api/tours/top-tours"
+					},
+					"response": []
+				},
+				{
+					"name": "getTourStats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BASE_URL}}/api/tours/tour-stats"
+					},
+					"response": []
+				},
+				{
+					"name": "getMonthlyPlan",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BASE_URL}}/api/tours/monthly-plan/2023"
+					},
+					"response": []
+				},
+				{
+					"name": "createReviewV2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n    \"review\": \"Çok beğendim, Mükemmel bir deneyimdi.\",\n    \"rating\": 3\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/tours/5c88fa8cf4afda39709c2955/reviews"
+					},
+					"response": []
+				},
+				{
+					"name": "getTourReviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BASE_URL}}/api/tours/5c88fa8cf4afda39709c2955/reviews"
+					},
+					"response": []
+				},
+				{
+					"name": "getToursWithin",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getDistances",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "signUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Furkan Evin\",\n    \"email\":\"furkanevin@gmail.com\",\n    \"password\":\"Denem@123\",\n\t\"passwordConfirm\":\"Denem@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/users/signup"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"furkanevin@gmail.com\",\n    \"password\":\"Denem@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/users/login"
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": "{{BASE_URL}}/api/users/logout"
+					},
+					"response": []
+				},
+				{
+					"name": "forgotPassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"furkanevin@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/users/forgot-password"
+					},
+					"response": []
+				},
+				{
+					"name": "resetPassword",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newPass\":\"Denem@123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/users/reset-password/d2617990839edfeb383dccad8608123cc5de75998edc52e5229ddb744b0e164d"
+					},
+					"response": []
+				},
+				{
+					"name": "updatePassword",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"currentPass\":\"Denem@123\",\n    \"newPass\":\"Sel@m123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/users/updatePassword"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "updateMe",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/Users/evin/Downloads/manzara.jpeg"
+								}
+							]
+						},
+						"url": "{{BASE_URL}}/api/users/update-me"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteMe",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{BASE_URL}}/api/users/delete-me"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BASE_URL}}/api/users"
+					},
+					"response": []
+				},
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n    \"name\": \"Deneme\",\n    \"email\": \"admin@natours.io\",\n    \"role\": \"admin\",\n    \"active\": true,\n    \"photo\": \"user-1.jpg\",\n    \"password\": \"Denem@123\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/users/"
+					},
+					"response": []
+				},
+				{
+					"name": "getUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BASE_URL}}/api/users/5c8a1d5b0190b214360dc057"
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"ali\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/users/ID"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{BASE_URL}}/api/users/ID"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "review",
+			"item": [
+				{
+					"name": "getAllReviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BASE_URL}}/api/reviews"
+					},
+					"response": []
+				},
+				{
+					"name": "createReview",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n    \"review\": \"Farklı açıklama\",\n    \"rating\": 2,\n    \"user\": \"674af90c720999a3df4f934c\",\n    \"tour\": \"5c88fa8cf4afda39709c2970\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/reviews"
+					},
+					"response": []
+				},
+				{
+					"name": "getReview",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BASE_URL}}/api/reviews/ID"
+					},
+					"response": []
+				},
+				{
+					"name": "updaterReview",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n    \"review\": \"Çok beğendim, Mükemmel bir deneyimdi.\",\n    \"rating\": 5\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/reviews/ID"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteReview",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{BASE_URL}}/api/reviews/674c2bb5a72b20bf88a6cef0"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
