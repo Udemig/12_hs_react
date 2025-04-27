@@ -42,3 +42,15 @@ console.log(x || "merhaba"); // "merhaba"
 const x = "merhaba";
 console.log(x || "merhaba"); // "merhaba"
 ```
+
+# Suspense
+
+- Nextjs'deki Suspense, bir componentin yüklenmesi sırasında bir loading göstermek için kullanılır.
+- Bütün sayfanın yüklenmesi yerine sadece spesifik bir bölümünün yüklenmesi gerektiğinde kullanılır.
+- Async componentları suspense ile sarmalarız ve fallback propuyla yüklenme sırasında ekrana basılcak conmponent'ı veririz
+
+```tsx
+<Suspense fallback={<Loading />}>
+  <UserTable />
+</Suspense>
+```

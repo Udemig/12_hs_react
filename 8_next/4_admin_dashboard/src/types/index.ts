@@ -59,4 +59,25 @@ type Product = {
   brand: string;
 };
 
-export type { Option, InfoCardItem, Order, ChartData, Product };
+type User = {
+  id: string;
+  name: string;
+  email: string;
+  password: string;
+  address: {
+    street: string;
+    city: string;
+    postal_code: string;
+    country: string;
+  };
+  phone: string;
+  orders: {
+    order_id: number;
+    product_id: number;
+    quantity: number;
+    total_price: number;
+    order_date: string;
+  }[]; // sipariş nesnelerinden oluşan bir dizi
+};
+
+export type { Option, InfoCardItem, Order, ChartData, Product, User };

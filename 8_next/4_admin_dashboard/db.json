@@ -2,8 +2,8 @@
   "products": [
     {
       "id": "2",
-      "name": "Samsung Galaxy S23",
-      "category": "Electronics",
+      "name": "Samsung Galaxy S24",
+      "category": "Elektronik",
       "price": 999.99,
       "stock": 30,
       "description": "6.6-inch display, Snapdragon 8 Gen 2, triple 50MP camera system.",
@@ -16,7 +16,7 @@
       "id": "3",
       "name": "Sony WH-1000XM5 Headphones",
       "category": "Accessories",
-      "price": 349.99,
+      "price": 249.99,
       "stock": 40,
       "description": "Industry-leading noise cancellation, 30 hours battery life.",
       "image_url": "https://picsum.photos/seed/3/500/500",
@@ -115,10 +115,22 @@
       "category": "Elektronik",
       "description": "selam bu şarj aleti......",
       "image_url": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/airpods-pro-2-hero-select-202409_FV1_FMT_WHH?wid=752&hei=636&fmt=jpeg&qlt=90&.v=1725492498882",
-      "price": 780,
+      "price": 999,
       "stock": 65,
-      "rating": -1,
+      "rating": 4,
       "reviews_count": 43
+    },
+    {
+      "id": "a6da",
+      "name": "Monitör",
+      "brand": "Samsung",
+      "category": "Elektronik",
+      "description": "Bu monitor ultra hd Bu monitor ultra hd Bu monitor ultra hd Bu monitor ultra hd Bu monitor ultra hd...",
+      "image_url": "https://productimages.hepsiburada.net/s/508/375-375/110000562945450.jpg",
+      "price": 20000,
+      "stock": 56,
+      "rating": 4,
+      "reviews_count": 45
     }
   ],
   "users": [

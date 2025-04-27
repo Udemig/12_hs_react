@@ -6,28 +6,31 @@ import InfoCard from "@/components/card/info-card";
 import { InfoCardItem } from "@/types";
 import SalesChart from "@/components/home/sales-chart";
 import CategoryChart from "@/components/home/category-chart";
+import { getValues } from "@/utils/service";
 
-export default function Home() {
+export default async function Home() {
+  const values = await getValues();
+
   const cards: InfoCardItem[] = [
     {
       icon: icon1,
       label: "Toplam Kullanıcı",
-      value: 1576,
+      value: values.total_users * 197,
     },
     {
       icon: icon2,
       label: "Toplam Sipariş",
-      value: 788,
+      value: values.total_orders * 78,
     },
     {
       icon: icon3,
       label: "Toplam Satış",
-      value: "419,123,12" + "$",
+      value: (values.total_price * 254).toLocaleString() + "$",
     },
     {
       icon: icon4,
       label: "Toplam Ürün",
-      value: 1970,
+      value: values.total_products * 156,
     },
   ];
 
